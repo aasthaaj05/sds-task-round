@@ -17,12 +17,9 @@ function GoogleMapSection() {
     lng: -38.523,
   });
 
-  // State management for the map
   const [map, setMap] = useState(null);
-
   const [directionRoutePoints, setDirectionRoutePoints]=useState([]);
 
-  // Initialize Google Places Autocomplete on destination input
   useEffect(() => {
     if (source && source.lat && source.lng && map) {
       map.panTo({
@@ -55,22 +52,41 @@ function GoogleMapSection() {
     }
   }, [destination]);
 
-  const directionRoute=()=>{
-    const DirectionService=new google.maps.DirectionService();
+  // const directionRoute=()=>{
+  //   const DirectionService=new google.maps.DirectionService();
 
-    DirectionService.route({
-      origin:{lat:source.lat, lng:source.lng},
-      destination:{lat:destination.lat, lng:destination.lng},
-      travelMode:google.maps.TravelMode.DRIVING
+  //   DirectionService.route({
+  //     origin:{lat:source.lat, lng:source.lng},
+  //     destination:{lat:destination.lat, lng:destination.lng},
+  //     travelMode:google.maps.TravelMode.DRIVING,
 
-    },(result,status)=>{
-      if(status===google.maps.DirectionsService.OK){
+  //   },(result,status)=>{
+  //     if(status===google.maps.DirectionsService.OK){
+  //       setDirectionRoutePoints(result)
+  //     }else{
+  //       console.error('Error');
+  //     }
+  //   })
+  // }
+
+  const directionRoute = () => {
+    const directionsService = new google.maps.DirectionsService(); // Correct name
+  
+    directionsService.route({
+      origin: { lat: source.lat, lng: source.lng },
+      destination: { lat: destination.lat, lng: destination.lng },
+      travelMode: google.maps.TravelMode.DRIVING,
+    }, (result, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        console.log('Route found:', result);
+        // You can set the directions here if needed
         setDirectionRoutePoints(result)
-      }else{
-        console.error('Error');
+      } else {
+        console.error('Directions request failed due to ', status);
       }
-    })
-  }
+    });
+  };
+  
 
   const onLoad = React.useCallback((map) => {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -81,8 +97,6 @@ function GoogleMapSection() {
   const onUnmount = React.useCallback((map) => {
     setMap(null);
   }, []);
-
-  
 
   return (
     <>
