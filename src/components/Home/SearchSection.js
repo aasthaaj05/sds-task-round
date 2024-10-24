@@ -30,6 +30,7 @@ function SearchSection() {
   }, [source, destination]);
 
   return (
+    <div>
     <div className='p-2 md:pd-5 border-[2px] rounded-xl'>
       <p className='text-[20px] font-bold'>Get a Ride</p>
       <InputItem type='source' />
@@ -37,16 +38,12 @@ function SearchSection() {
 
       <button 
         className='p-3 bg-black w-full mt-5 text-white rounded-lg'
-        onClick={calculateDistance}
+        onClick={()=>calculateDistance()}
       >
         Search
       </button>
-
-      {distance !== null && (
-        <p className='mt-5 text-[18px]'>
-          Distance: {(distance / 1000).toFixed(2)} km
-        </p>
-      )}
+      {distance?<carListOptions distance={distance}/>:null}
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React, { useEffect, useState, Suspense, lazy, useContext } from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
 import { SourceContext } from '../../../context/SourceContext';
-import { DestinationContext } from '../../../context/DestinationContext'; // Assuming you have this context
+import { DestinationContext } from '../../../context/DestinationContext';
 
 const GooglePlacesAutocomplete = lazy(() => import('react-google-places-autocomplete'));
 
@@ -79,7 +79,7 @@ function InputItem({ type }) {
   return (
     <>
       <Script
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_API_KEY}&libraries=places`}
+        src={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAz-92LEq9W0wbfhIdUKtj_lC7AMx0Ysio&loading=async&libraries=places`}
         onLoad={handleScriptLoad}
         onError={handleScriptError}
         strategy="lazyOnload"
@@ -92,7 +92,7 @@ function InputItem({ type }) {
         {isScriptLoaded ? (
           <Suspense fallback={<p>Loading autocomplete...</p>}>
             <GooglePlacesAutocomplete
-              //apiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
+              // apiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
               selectProps={{
                 value,
                 onChange: (place) => {

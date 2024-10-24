@@ -16,8 +16,8 @@ export default function Home() {
     <SourceContext.Provider value={{ source, setSource }}>
       <DestinationContext.Provider value={{ destination, setDestination }}>
         <LoadScript
-          libraries={['places']}
-          googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY} // Ensure the correct env variable is set
+          libraries={['places']} // 'places' should be a string
+          googleMapsApiKey='AIzaSyAz-92LEq9W0wbfhIdUKtj_lC7AMx0Ysio' // Ensure the correct env variable is set
         >
           <div className="p-6 grid grid-cols-1 md:grid-cols-3 gap-5">
             <div>
