@@ -1,0 +1,19 @@
+[debug] [2024-10-25T05:08:51.760Z] ----------------------------------------------------------------------
+[debug] [2024-10-25T05:08:51.774Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\a\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js login
+[debug] [2024-10-25T05:08:51.774Z] CLI Version:   13.23.0
+[debug] [2024-10-25T05:08:51.775Z] Platform:      win32
+[debug] [2024-10-25T05:08:51.775Z] Node Version:  v20.17.0
+[debug] [2024-10-25T05:08:51.776Z] Time:          Fri Oct 25 2024 10:38:51 GMT+0530 (India Standard Time)
+[debug] [2024-10-25T05:08:51.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-25T05:08:51.785Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2024-10-25T05:08:52.943Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2024-10-25T05:08:52.944Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[info] i  To change your data collection preference at any time, run `firebase logout` and log in again. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://accounts.google.com/o/oauth2/auth?client_id=563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=71630006&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+[info] 
+[info] Waiting for authentication...
